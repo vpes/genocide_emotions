@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>genocide_emotions: {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/g_e.css"%}" type="text/css"/>
+    <link rel="stylesheet" href="{% static "dynatable/jquery.dynatable.css"%}" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {% block header_css%}{% endblock %}
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{% static "dynatable/jquery.dynatable.js"%}"></script>
+    {% block header_js%}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 class="main">genocida_emociones</h1>
+    </header>
+
+<div id="main" class="tabs">
+  <ul>
+    <li><a href="#video-1">Video</a></li>
+    <li><a href="#busqueda">B&uacute;squedas</a></li>
+    <li><a href="#presentacion">Descripci&oacute;n</a></li>
+    <li><a href="#referencias">Referencias</a></li>
+  </ul>
+
+    <div id="video-1">{% block content %}{% endblock %}</div>
+    <div id="busqueda" data="/search_list"></div>
+    <div id="presentacion" data="/presentation">
+    </div>
+    <div id="referencias" data="/references"></div>
+</div>
+    <footer>
+        <p class="full">GitHub: <a href="http://github.com">http://github.com</a></p>
+        <p>This site content is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License. </a></p>
+        <p class="full">©OPYLEFT. PLEASE SHARE/REMIX/REUSE.</p>
+        <p >vctr@acm.org, Buenos Aires, September 2018</p>
+    </footer>
+</div>
+</body>
+
+</html>

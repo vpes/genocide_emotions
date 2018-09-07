@@ -1,0 +1,29 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block title %}Video 1{% endblock %}
+{% block links %}{% endblock %}
+{% block header_js%}
+    <script type="application/javascript" language="JavaScript" src="https://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+    <script type="application/javascript" language="JavaScript" src="{% static "js/g_e.js"%}"></script>
+
+{% endblock %}
+
+{% block content %}
+    <div id="video-1">
+<form action="" method="POST" id="form">
+{% csrf_token %}
+<input type="hidden" value="video1"/>
+    <video id="video1" autoplay>
+      <source src="{% static "video/etchec.juicio.genocidas.2.mp4"%}" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div id="search">
+        <legend></legend>
+        <span><label for="keyword">Keyword:</label><input type="text" data-rule-required="true" data-msg-email="Please enter the keyword to search" id="keyword" name="keyword"/></span>
+        <span><label for="name">Your Name:</label><input type="text" data-rule-required="true" data-msg-email="Please enter your name" id="name" name="name"/></span>
+        <span><label></label><input type="button" id="submit" value="Submit"/></span>
+    </div>
+</form>
+    </div>
+
+{% endblock %}

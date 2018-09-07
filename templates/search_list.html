@@ -1,0 +1,28 @@
+<table id="search_results" class="table table-bordered">
+  <thead>
+    <th class="dynatable-head" data-dynatable-column="created">Fecha creaci&oacute;n</th>
+    <th class="dynatable-head" data-dynatable-column="keywords">B&uacute;squeda</th>
+    <th class="dynatable-head" data-dynatable-column="name">Nombre</th>
+    <th class="dynatable-head" data-dynatable-column="country">Pa&iacute;s</th>
+    <th class="dynatable-head" data-dynatable-column="results">Resultados</th>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<script>
+
+$.ajax({
+  url: '/search_list',
+  success: function(data){
+    $('#search_results').dynatable({
+      dataset: {
+              ajax: true,
+    ajaxUrl: '/search_list',
+    ajaxOnLoad: true,
+        records: data
+      }
+    });
+  }
+});
+</script>
+
